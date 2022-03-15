@@ -12,7 +12,6 @@ pipeline {
                 branch = repo.GIT_BRANCH
                 withCredentials([gitUsernamePassword(credentialsId: 'minegit', gitToolName: 'git-tool')]) {
                 sh """
-                      git pull
                       if [ $branch != 'develop' ]; then
                         git checkout release/1.0.0
                         ls -ltr
