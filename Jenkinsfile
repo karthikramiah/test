@@ -10,7 +10,7 @@ pipeline {
                 commit = repo.GIT_COMMIT
                 branch = repo.GIT_BRANCH
                 withCredentials([gitUsernamePassword(credentialsId: 'minegit', gitToolName: 'git-tool')]) {
-                sh """cd test
+                sh """
                       git pull
                       if [ $branch != 'develop' ]; then
                         git checkout release/1.0.0
