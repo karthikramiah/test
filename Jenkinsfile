@@ -5,6 +5,7 @@ pipeline {
         stage('checkout') {
             steps {
               script {
+                branch = "develop"
                 def repo = checkout scm
                 commit7 = repo.GIT_COMMIT.take(7)
                 commit = repo.GIT_COMMIT
